@@ -1,46 +1,89 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
-  max-width: 600px;
+  max-width: 940px;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
+
   header {
     display: flex;
-    align-self: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    width: 940px;
+
     button {
-      border: 0;
-      background: none;
-    }
-    strong {
-      color: #fff;
-      font-size: 24px;
-      margin: 0 15px;
+    margin: 5px 0 0;
+    height: 42px;
+    width: 172px;
+    background: #F94D6A;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    font-size: 19px;
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 0;
+
+    &:hover {
+      background: ${darken(0.03, '#F94D6A')}
     }
   }
+
+    h1 {
+      color: #FFF;
+      font-weight: 38px;
+    }
+
+  }
+
   ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 15px;
-    margin-top: 30px;
+    height: 940px;
+    margin: 30px;
+    padding: 30px;
+
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      opacity: 10%;
+      padding: 22px 30px 18px 30px;
+      background: rgba(0,0, 0, 0.2);
+      border-radius: 4px;
+      margin: 10px;
+      height: 62px;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+    }
+
+      h3 {
+
+      }
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+      strong {
+        color: rgba(255, 255, 255, 0.6);
+        margin-right: 30px;
+
+        }
+      }
+
+    }
   }
 `;
 
-export const Time = styled.li`
-  padding: 20px;
-  border-radius: 4px;
-  background: #fff;
-  opacity: ${props => (props.past ? 0.6 : 1)};
-  strong {
-    display: block;
-    color: ${props => (props.available ? '#999' : '#7159c1')};
-    font-size: 20px;
-    font-weight: normal;
-  }
-  span {
-    display: block;
-    margin-top: 3px;
-    color: ${props => (props.available ? '#999' : '#666')};
-  }
-`;
+export const List = styled.ul``;

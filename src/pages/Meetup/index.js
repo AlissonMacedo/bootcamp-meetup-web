@@ -5,8 +5,9 @@ import { Form, Input } from '@rocketseat/unform';
 import { signOut } from '~/store/modules/auth/actions';
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
+import AvatarInput from './AvatarInput';
+
 import { Container } from './styles';
-import { MdAddCircleOutline } from 'react-icons/md';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -23,34 +24,26 @@ export default function Profile() {
   return (
     <Container>
       <Form initialData={profile} onSubmit={handleSubmit}>
+        <AvatarInput name="avatar_id"/>
 
-        <Input name="name" placeholder="Insira seu nome completo" />
-        <Input name="email" type="email" placeholder="Insira seu e-mail" />
+        <Input name="title" placeholder="Titulo do Meetup" />
 
-        <hr />
+        <Input name="description" type="multext" placeholder="Descrição completa" />
 
         <Input
-          type="password"
-          name="oldPassword"
-          placeholder="Insira sua senha atual"
+          name="date"
+          type="date"
+          placeholder="Data do meetup"
         />
         <Input
-          type="password"
-          name="password"
-          placeholder="Insira sua nova senha"
+          name="location"
+          type="text"
+          placeholder="Localização"
         />
-        <Input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirme sua nova senha"
-        />
-
         <div>
-          <button>
-            <MdAddCircleOutline size={24} color="#fff" />
-            Salvar perfil
-          </button>
+          <button type="submit">Salvar meetup</button>
         </div>
+
       </Form>
     </Container>
   );

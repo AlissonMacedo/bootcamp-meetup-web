@@ -9,9 +9,9 @@ export const Container = styled.div`
       opacity: 0.7;
     }
     img {
-      height: 120px;
-      width: 120px;
-      border-radius: 50%;
+      height: 300px;
+      width: 940px;
+      border-radius: 4px;
       border: 3px solid rgba(255, 255, 255, 0.3);
       background: #eee;
     }
