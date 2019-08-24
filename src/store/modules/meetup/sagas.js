@@ -36,7 +36,7 @@ export function* newMeetup({ payload }) {
     const { file_id, title, description, date, location } = payload;
 
     yield call(api.post, 'meetups', {
-      file_id,
+      image_id: file_id,
       title,
       description,
       date,
