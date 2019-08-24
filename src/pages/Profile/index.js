@@ -2,11 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input } from '@rocketseat/unform';
 
-import { signOut } from '~/store/modules/auth/actions';
+import { MdAddCircleOutline } from 'react-icons/md';
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
 import { Container } from './styles';
-import { MdAddCircleOutline } from 'react-icons/md';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -16,14 +15,9 @@ export default function Profile() {
     dispatch(updateProfileRequest(data));
   }
 
-  function handleSignOut() {
-    dispatch(signOut());
-  }
-
   return (
     <Container>
       <Form initialData={profile} onSubmit={handleSubmit}>
-
         <Input name="name" placeholder="Insira seu nome completo" />
         <Input name="email" type="email" placeholder="Insira seu e-mail" />
 

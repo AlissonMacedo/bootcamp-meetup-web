@@ -1,13 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
+import { MdCameraAlt } from 'react-icons/md';
 import api from '~/services/api';
 
 import { Container } from './styles';
 
-import selecione from '~/assets/selecione.png'
-
-export default function AvatarInput() {
-  const { defaultValue, registerField } = useField('avatar');
+export default function ImageInput() {
+  const { defaultValue, registerField } = useField('file');
 
   const [file, setFile] = useState(defaultValue && defaultValue.id);
   const [preview, setPreview] = useState(defaultValue && defaultValue.url);
@@ -17,12 +16,12 @@ export default function AvatarInput() {
   useEffect(() => {
     if (ref.current) {
       registerField({
-        name: 'avatar_id',
+        name: 'file_id',
         ref: ref.current,
         path: 'dataset.file',
       });
     }
-  }, [ref, registerField]);
+  }, [ref.current]); // eslint-disable-line
 
   async function handleChange(e) {
     const data = new FormData();
@@ -39,17 +38,18 @@ export default function AvatarInput() {
 
   return (
     <Container>
-      <label htmlFor="avatar">
-        <img
-          src={
-            preview || selecione
-          }
-          alt=""
-        />
-
+      <label htmlFor="file">
+        {preview ? (
+          <img src={preview} alt="" />
+        ) : (
+          <div>
+            <MdCameraAlt size={55} />
+            <strong>Selecione a imagem</strong>
+          </div>
+        )}
         <input
           type="file"
-          id="avatar"
+          id="file"
           accept="image/*"
           data-file={file}
           onChange={handleChange}

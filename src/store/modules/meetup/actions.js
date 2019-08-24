@@ -11,32 +11,46 @@ export function fetchMeetupSuccess(meetups) {
   };
 }
 
-export function fetchMeetupFailure() {
+export function failureMeetup() {
   return {
-    type: '@meetup/FETCH_MEETUP_FAILURE',
+    type: '@meetup/FAILURE',
   };
 }
 
-export function newMeetupRequest(file_id, title, description, date, location){
+export function newMeetupRequest(file_id, title, description, date, location) {
   return {
     type: '@meetup/NEW_MEETUP_REQUEST',
     payload: { file_id, title, description, date, location },
   };
 }
 
-export function newMeetupSucess() {
+export function newMeetupSuccess() {
   return {
     type: '@meetup/NEW_MEETUP_SUCCESS',
   };
 }
 
-export function cancelMeetupSucess() {
+export function cancelMeetupRequest(id) {
   return {
-    type: '@meetup/CANCEL_MEETUP_SUCCESS'
+    type: '@meetup/CANCEL_MEETUP_REQUEST',
+    payload: { id },
   };
 }
 
-export function editMeetupRequest( id, file_id, title, description, date, location ) {
+export function cancelMeetupSuccess() {
+  return {
+    type: '@meetup/CANCEL_MEETUP_SUCCESS',
+  };
+}
+
+export function editMeetupRequest(
+  id,
+  file_id,
+  title,
+  description,
+  date,
+  location
+) {
   return {
     type: '@meetup/EDIT_MEETUP_REQUEST',
     payload: { id, file_id, title, description, date, location },
@@ -45,6 +59,6 @@ export function editMeetupRequest( id, file_id, title, description, date, locati
 
 export function editMeetupSuccess() {
   return {
-    type: '@meetup/EDIT_MEETUP_SUCESS',
+    type: '@meetup/EDIT_MEETUP_SUCCESS',
   };
 }

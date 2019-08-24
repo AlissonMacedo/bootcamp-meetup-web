@@ -1,36 +1,26 @@
-import React, { Component, useState, useEffect, useMemo } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 
 import { MdChevronRight, MdAddCircleOutline } from 'react-icons/md';
 
-import { Container, List } from './styles';
-
+import { Container, List, Button } from './styles';
 
 export default function Dashboard() {
+  return (
+    <Container>
+      <header>
+        <h2>Meus meetups</h2>
+        <Link to="/meetup/new">
+          <Button>
+            <MdAddCircleOutline size={20} />
+            Novo meetup
+          </Button>
+        </Link>
+      </header>
 
-return (
-        <Container>
-          <header>
-            <h1>Meus Meetups</h1>
-            <Link to="/meetup">
-            <button>
-              <MdAddCircleOutline size={24} color="#fff" />
-                Novo Meetup
-            </button>
-            </Link>
-          </header>
-
-          <List>
-            <Link to="/meetupdetails">
-            <li>
-              <h3>Meetup de React Native</h3>
-              <div>
-                <strong>24 de Junho, às 20h</strong>
-                <MdChevronRight size={24} color="#fff" />
-              </div>
-            </li>
-          </Link>
+      <List>
+        <Link to="/meetupdetails">
           <li>
             <h3>Meetup de React Native</h3>
             <div>
@@ -38,14 +28,22 @@ return (
               <MdChevronRight size={24} color="#fff" />
             </div>
           </li>
-            <li>
-              <h3>Meetup de React Native</h3>
-              <div>
-                <strong>24 de Junho, às 20h</strong>
-                <MdChevronRight size={24} color="#fff" />
-              </div>
-            </li>
-          </List>
-        </Container>
-      );
-  }
+        </Link>
+        <li>
+          <h3>Meetup de React Native</h3>
+          <div>
+            <strong>24 de Junho, às 20h</strong>
+            <MdChevronRight size={24} color="#fff" />
+          </div>
+        </li>
+        <li>
+          <h3>Meetup de React Native</h3>
+          <div>
+            <strong>24 de Junho, às 20h</strong>
+            <MdChevronRight size={24} color="#fff" />
+          </div>
+        </li>
+      </List>
+    </Container>
+  );
+}
