@@ -11,7 +11,7 @@ export const Container = styled.div`
     align-items: flex-end;
     input,
     textarea {
-      width: 100%;
+      width: 900px;
       min-width: 100%;
       background: rgba(0, 0, 0, 0.1);
       border: 0;
