@@ -47,5 +47,31 @@ export default function MeetupEdit({ match }) {
     );
   }
 
-  return <h1>Editar meetup</h1>;
+  return (
+    <Container>
+      <Form schema={schema} initialData={currentMeetup} onSubmit={handleSubmit}>
+        <ImageInput name="fle" />
+
+        <Input name="title" placeholder="Titulo do meetup" />
+        <Input name="description" placeholder="Descrição do meetup" multine />
+        <DatePicker name="date" placeholder="Data do meetup" />
+        <Input name="location" placeholder="Localização do meetup" />
+
+        <button type="submit">
+          {loading ? (
+            'Salvando'
+          ) : (
+            <>
+              <MdAddCircleOutline size={20} />
+              Salvar
+            </>
+          )}
+        </button>
+      </Form>
+    </Container>
+  );
 }
+
+MeetupEdit.propTypes = {
+  match: PropTypes.shape().isRequired,
+};
