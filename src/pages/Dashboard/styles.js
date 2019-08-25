@@ -85,3 +85,5 @@ export const Button = styled.button`
     margin-right: 10px;
   }
 `;
+
+export const Meetup = styled.li``;
