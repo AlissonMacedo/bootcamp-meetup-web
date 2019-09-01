@@ -9,18 +9,14 @@
 <img src="./demo/demo1.png" alt="demo1" title="demo1">
 </p>
 
-## 💻  Dashboard screen, incriptions and profile.
+## 💻  Dashboard screen and event.
 
-- A dashboard linsting meetups by date, It is possible to register for an event.
-- The screen of incriptions list the events you are subscribed to.
-- The profile screen is possible to change your data as name, email and enter a new password.
+- A dashboard linsting meetups by date, It is possible to register an event.
+- Clicking on an event is possible to edit or cancel the event.
 
 <p align="center">
 <img src="./demo/demo2.gif" alt="demo2" title="demo2">
 <img src="./demo/demo3.gif" alt="demo3" title="demo3">
-<img src="./demo/demo4.gif" alt="demo4" title="demo4">
-<img src="./demo/demo5.gif" alt="demo5" title="demo5">
-<img src="./demo/demo6.gif" alt="demo6" title="demo6">
 </p>
 
 
