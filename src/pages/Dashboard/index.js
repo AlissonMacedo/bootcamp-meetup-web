@@ -45,9 +45,9 @@ export default function Dashboard() {
             <li past={meetup.past}>
               <strong>{meetup.title}</strong>
               <div>
-                <span>
+                <strong>
                   {meetup.past ? 'Esse meetup ja aconteçeu' : meetup.date}
-                </span>
+                </strong>
                 <MdChevronRight size={30} />
               </div>
             </li>
