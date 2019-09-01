@@ -44,6 +44,7 @@ export function* signUp({ payload }) {
       provider: true,
     });
 
+    toast.success('Cadastro criado com sucesso!');
     history.push('/');
   } catch (err) {
     console.log(err);

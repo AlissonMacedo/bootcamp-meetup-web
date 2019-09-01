@@ -29,7 +29,11 @@ export default function Signin() {
 
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="email" type="email" placeholder="Digite seu e-mail" />
-        <Input name="password" type="password" placeholder="Sua senha secreta" />
+        <Input
+          name="password"
+          type="password"
+          placeholder="Sua senha secreta"
+        />
 
         <button type="submit">{loading ? 'Carregando...' : 'Acessar'}</button>
         <Link to="/register">Criar conta grátis</Link>
