@@ -6,7 +6,7 @@
  - A simple screen of login and register;
 
 <p align="center">
-<img src="./demo/demo1.png" alt="demo1" title="demo1">
+<img src="./demo/demo1.gif" alt="demo1" title="demo1">
 </p>
 
 ## 💻  Dashboard screen and event.
